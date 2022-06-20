@@ -5,6 +5,7 @@ using UnityEngine;
 public class PositionOrder : MonoBehaviour
 {
     GameObject[] position;
+    public GameObject[] confetti;
     public static int playerPosition;
 
     void Start()
@@ -24,6 +25,19 @@ public class PositionOrder : MonoBehaviour
             playerPosition = position.Length + 1;
             Points.endIt = true;
             GameManager.manager.runs++;
+
+            switch(playerPosition)
+            {
+                case 1:
+                    confetti[0].SetActive(true);
+                    break;
+                case 2:
+                    confetti[1].SetActive(true);
+                    break;
+                case 3:
+                    confetti[2].SetActive(true);
+                    break;
+            }
         }
 
         other.tag = "Ended";

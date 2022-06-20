@@ -5,10 +5,10 @@ using UnityEngine.UI;
 
 public class TrailStoreManager : MonoBehaviour
 {
-    public TrailRenderer[] models;
+    public GameObject[] models;
     [Space]
-    public Button buyEquipBtn;
-    public Text buyEquipText;
+    public Button EquipBtn;
+    public Text EquipText;
 
     bool canSelect;
     int chosenTrail;
@@ -35,20 +35,20 @@ public class TrailStoreManager : MonoBehaviour
                 {
                     if (GameManager.manager.trails[w].selected)
                     {
-                        buyEquipText.text = "Equipped";
-                        buyEquipBtn.interactable = false;
+                        EquipText.text = "Equipped";
+                        EquipBtn.interactable = false;
                     }
                     else
                     {
-                        buyEquipText.text = "Equip";
-                        buyEquipBtn.interactable = true;
+                        EquipText.text = "Equip";
+                        EquipBtn.interactable = true;
                         canSelect = true;
                     }
                 }
                 else
                 {
-                    buyEquipText.text = GameManager.manager.trails[w].price.ToString();
-                    buyEquipBtn.interactable = true;
+                    EquipText.text = "Locked";
+                    EquipBtn.interactable = false;
                     canSelect = false;
                 }
 
@@ -57,7 +57,7 @@ public class TrailStoreManager : MonoBehaviour
         }
     }
 
-    public void BuyEquip()
+    public void Equip()
     {
         if (canSelect)
         {
@@ -68,15 +68,6 @@ public class TrailStoreManager : MonoBehaviour
             }
             GameManager.manager.trails[chosenTrail].selected = true;
             CheckAvailability(chosenTrail);
-        }
-        else
-        {
-            if (GameManager.manager.money >= GameManager.manager.trails[chosenTrail].price)
-            {
-                GameManager.manager.money -= GameManager.manager.trails[chosenTrail].price;
-                GameManager.manager.trails[chosenTrail].isUnlocked = true;
-                CheckAvailability(chosenTrail);
-            }
         }
         SaveSystem.SaveGame();
     }
@@ -89,10 +80,36 @@ public class TrailStoreManager : MonoBehaviour
     {
         for (int m = 0; m < models.Length; m++)
         {
-            if (m == n)
-                models[m].emitting = true;
-            else
-                models[m].emitting = false;
+            TrailRenderer trail = models[m].GetComponent<TrailRenderer>();
+            ParticleSystem[] particle = models[m].transform.GetComponentsInChildren<ParticleSystem>();
+
+
+            if(trail != null)
+            {
+                if (m == n)
+                    trail.emitting = true;
+                else
+                    trail.emitting = false;
+            }
+
+            if(particle != null)
+            {
+                if (m == n)
+                {
+                    foreach (ParticleSystem ps in particle)
+                    {
+                        ps.Play();
+                    }
+                }
+                else
+                {
+                    foreach (ParticleSystem ps in particle)
+                    {
+                        ps.Stop();
+                    }
+                }
+            }
+            
         }
     }
 }

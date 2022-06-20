@@ -15,23 +15,23 @@ public class Tire_Script : MonoBehaviour
     float forwardForce;
     float downwardForce;
     [Space]
-    public TrailRenderer trail;
+    public TrailRenderer trailT;
+    public ParticleSystem[] trailP;
 
     #region AI Config Variables
     float reactionTime;
     float flyTime;
-    float pointsTime;
     #endregion
 
     void Start()
     {
         rb = gameObject.GetComponent<Rigidbody>();
-        trail = transform.GetChild(transform.childCount - 1).gameObject.GetComponent<TrailRenderer>();
+        trailT = transform.GetChild(transform.childCount - 1).gameObject.GetComponent<TrailRenderer>();
+        trailP = transform.GetChild(transform.childCount - 1).transform.GetComponentsInChildren<ParticleSystem>();
 
         #region AI Config Settings
         reactionTime = Random.Range(0f, .6f);
         flyTime = Random.Range(0f, 1f);
-        pointsTime = .3f;
         #endregion
 
         minVelocity = 5;
@@ -56,7 +56,10 @@ public class Tire_Script : MonoBehaviour
             }
             else
             {
-                trail.emitting = true;
+                if (trailT != null)
+                trailT.emitting = true;
+                if (trailP != null)
+                    ParticlesOn();
             }
             
         }
@@ -69,36 +72,46 @@ public class Tire_Script : MonoBehaviour
             if (AcceleratePedal.pisaFundo && rb.velocity.y < 0)
             {
                 rb.AddForce(Vector3.forward * forwardForce);
-                trail.emitting = true;
+
+                if (trailT != null)
+                    trailT.emitting = true;
+                if (trailP != null)
+                    ParticlesOn();
             }
             else if (Input.GetKey(KeyCode.K) && rb.velocity.y >= 0)
             {
                 rb.AddForce(Vector3.back * (forwardForce / 2));
-                trail.emitting = false;
+
+                if (trailT != null)
+                    trailT.emitting = false;
+                if (trailP != null)
+                    ParticlesOff();
             }
             else
             {
-                trail.emitting = false;
+                if (trailT != null)
+                    trailT.emitting = false;
+                if (trailP != null)
+                    ParticlesOff();
             }
-
-            pointsTime = .3f;
         }
         else
         {
             if (AcceleratePedal.pisaFundo)
             {
                 rb.AddForce(Vector3.down * downwardForce);
-                trail.emitting = true;
+
+                if (trailT != null)
+                    trailT.emitting = true;
+                if (trailP != null)
+                    ParticlesOn();
             }
             else
             {
-                trail.emitting = false;
-            }
-
-            pointsTime -= Time.deltaTime;
-            if(pointsTime <= 0)
-            {
-                Points.AddPoints();
+                if (trailT != null)
+                    trailT.emitting = false;
+                if (trailP != null)
+                    ParticlesOff();
             }
         }
     }
@@ -113,16 +126,26 @@ public class Tire_Script : MonoBehaviour
                 if (reactionTime <= 0)
                 {
                     rb.AddForce(Vector3.forward * forwardForce);
-                    trail.emitting = true;
+
+                    if (trailT != null)
+                        trailT.emitting = true;
+                    if (trailP != null)
+                        ParticlesOn();
                 }
                 else
                 {
-                    trail.emitting = false;
+                    if (trailT != null)
+                        trailT.emitting = false;
+                    if (trailP != null)
+                        ParticlesOff();
                 }
             }
             else
             {
-                trail.emitting = false;
+                if (trailT != null)
+                    trailT.emitting = false;
+                if (trailP != null)
+                    ParticlesOff();
             }
 
             flyTime = Random.Range(0f, 1f);
@@ -133,16 +156,39 @@ public class Tire_Script : MonoBehaviour
             if(flyTime <= 0)
             {
                 rb.AddForce(Vector3.down * downwardForce);
-                trail.emitting = true;
+
+                if (trailT != null)
+                    trailT.emitting = true;
+                if (trailP != null)
+                    ParticlesOn();
             }
             else
             {
-                trail.emitting = false;
+                if (trailT != null)
+                    trailT.emitting = false;
+                if (trailP != null)
+                    ParticlesOff();
             }
 
             reactionTime = Random.Range(0f, .6f);
         }
     }
+
+    void ParticlesOn()
+    {
+        foreach(ParticleSystem ps in trailP)
+        {
+            ps.Play();
+        }
+    }
+    void ParticlesOff()
+    {
+        foreach (ParticleSystem ps in trailP)
+        {
+            ps.Stop();
+        }
+    }
+
 
     private void OnCollisionStay(Collision collision)
     {

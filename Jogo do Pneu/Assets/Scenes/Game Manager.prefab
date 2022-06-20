@@ -93,4 +93,9 @@ MonoBehaviour:
     price: 150
     isUnlocked: 0
     selected: 0
+  - name: Flame Up
+    model: {fileID: 2752937597752090642, guid: 68b8f8a613f1cbd4eac4ca4526a9389e, type: 3}
+    price: 500
+    isUnlocked: 0
+    selected: 0
   money: 0

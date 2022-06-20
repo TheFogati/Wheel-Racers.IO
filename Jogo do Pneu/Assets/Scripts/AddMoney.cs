@@ -15,18 +15,18 @@ public class AddMoney : MonoBehaviour
 
     void Start()
     {
-        scoreMoney = Points.numbers/10;
+        scoreMoney = Points.numbers;
         
         switch(PositionOrder.playerPosition)
         {
             case 1:
-                positionMoney = 100;
-                break;
-            case 2:
                 positionMoney = 50;
                 break;
-            case 3:
+            case 2:
                 positionMoney = 25;
+                break;
+            case 3:
+                positionMoney = 12;
                 break;
         }
 

@@ -7,8 +7,8 @@ public class WheelStoreManager : MonoBehaviour
 {
     public GameObject[] models;
     [Space]
-    public Button buyEquipBtn;
-    public Text buyEquipText;
+    public Button EquipBtn;
+    public Text EquipText;
 
     bool canSelect;
     int chosenWheel;
@@ -35,20 +35,20 @@ public class WheelStoreManager : MonoBehaviour
                 {
                     if(GameManager.manager.wheels[w].selected)
                     {
-                        buyEquipText.text = "Equipped";
-                        buyEquipBtn.interactable = false;
+                        EquipText.text = "Equipped";
+                        EquipBtn.interactable = false;
                     }
                     else
                     {
-                        buyEquipText.text = "Equip";
-                        buyEquipBtn.interactable = true;
+                        EquipText.text = "Equip";
+                        EquipBtn.interactable = true;
                         canSelect = true;
                     }
                 }
                 else
                 {
-                    buyEquipText.text = GameManager.manager.wheels[w].price.ToString();
-                    buyEquipBtn.interactable = true;
+                    EquipText.text = "Locked";
+                    EquipBtn.interactable = false;
                     canSelect = false;
                 }
 
@@ -57,7 +57,7 @@ public class WheelStoreManager : MonoBehaviour
         }
     }
 
-    public void BuyEquip()
+    public void Equip()
     {
         if(canSelect)
         {
@@ -70,14 +70,6 @@ public class WheelStoreManager : MonoBehaviour
             CheckAvailability(chosenWheel);
         }
         else
-        {
-            if(GameManager.manager.money >= GameManager.manager.wheels[chosenWheel].price)
-            {
-                GameManager.manager.money -= GameManager.manager.wheels[chosenWheel].price;
-                GameManager.manager.wheels[chosenWheel].isUnlocked = true;
-                CheckAvailability(chosenWheel);
-            }
-        }
 
         SaveSystem.SaveGame();
     }
