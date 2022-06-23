@@ -5,6 +5,12 @@ using UnityEngine;
 public class ChangeTab : MonoBehaviour
 {
     public GameObject epicTab;
+    public GameObject rodaRodaBTN;
+
+    private void Update()
+    {
+        rodaRodaBTN.SetActive(!epicTab.activeInHierarchy);
+    }
 
     public void ShowEpic()
     {

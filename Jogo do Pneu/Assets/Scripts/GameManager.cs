@@ -3,21 +3,37 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
-public class Wheels
+public class SimpleWheels
 {
     public string name;
     public GameObject model;
-    public int price;
     public bool isUnlocked;
     public bool selected;
 }
 
 [System.Serializable]
-public class Trails
+public class SimpleTrails
 {
     public string name;
     public GameObject model;
-    public int price;
+    public bool isUnlocked;
+    public bool selected;
+}
+
+[System.Serializable]
+public class EpicWheels
+{
+    public string name;
+    public GameObject model;
+    public bool isUnlocked;
+    public bool selected;
+}
+
+[System.Serializable]
+public class EpicTrails
+{
+    public string name;
+    public GameObject model;
     public bool isUnlocked;
     public bool selected;
 }
@@ -30,8 +46,10 @@ public class GameManager : MonoBehaviour
 
     public bool gamePaused;
     [Space]
-    public Wheels[] wheels;
-    public Trails[] trails;
+    public SimpleWheels[] simpleWheels;
+    public EpicWheels[] epicWheels;
+    public SimpleTrails[] simpleTrails;
+    public EpicTrails[] epicTrails;
     [Space]
     public int money;
 

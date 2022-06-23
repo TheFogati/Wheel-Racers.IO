@@ -23,6 +23,7 @@ public class Tire_Script : MonoBehaviour
     float flyTime;
     #endregion
 
+
     void Start()
     {
         rb = gameObject.GetComponent<Rigidbody>();
@@ -37,6 +38,9 @@ public class Tire_Script : MonoBehaviour
         minVelocity = 5;
         forwardForce = 25;
         downwardForce = 25;
+
+        if(!showcase)
+            rb.velocity = Vector3.forward * 15;
     }
 
     void FixedUpdate()

@@ -41,6 +41,7 @@ public class PositionOrder : MonoBehaviour
         }
 
         other.tag = "Ended";
+        other.GetComponent<EngineSound>().StopEngine();
         other.GetComponent<Tire_Script>().enabled = false;
     }
 }

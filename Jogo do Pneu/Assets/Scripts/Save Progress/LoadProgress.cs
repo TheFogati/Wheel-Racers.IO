@@ -10,16 +10,27 @@ public class LoadProgress : MonoBehaviour
 
         GameManager.manager.money = data.money;
 
-        for (int w = 0; w < GameManager.manager.wheels.Length; w++)
+        for (int w = 0; w < GameManager.manager.simpleWheels.Length; w++)
         {
-            GameManager.manager.wheels[w].isUnlocked = data.unlockedWheels[w];
-            GameManager.manager.wheels[w].selected = data.selectedWheel[w];
+            GameManager.manager.simpleWheels[w].isUnlocked = data.unlockedSimpleWheels[w];
+            GameManager.manager.simpleWheels[w].selected = data.selectedSimpleWheel[w];
+        }
+        for (int w = 0; w < GameManager.manager.epicWheels.Length; w++)
+        {
+            GameManager.manager.epicWheels[w].isUnlocked = data.unlockedEpicWheels[w];
+            GameManager.manager.epicWheels[w].selected = data.selectedEpicWheel[w];
         }
 
-        for (int t = 0; t < GameManager.manager.trails.Length; t++)
+
+        for (int t = 0; t < GameManager.manager.simpleTrails.Length; t++)
         {
-            GameManager.manager.trails[t].isUnlocked = data.unlockedTrails[t];
-            GameManager.manager.trails[t].selected = data.selectedTrail[t];
+            GameManager.manager.simpleTrails[t].isUnlocked = data.unlockedSimpleTrails[t];
+            GameManager.manager.simpleTrails[t].selected = data.selectedSimpleTrail[t];
+        }
+        for (int t = 0; t < GameManager.manager.epicTrails.Length; t++)
+        {
+            GameManager.manager.epicTrails[t].isUnlocked = data.unlockedEpicTrails[t];
+            GameManager.manager.epicTrails[t].selected = data.selectedEpicTrail[t];
         }
     }
 }

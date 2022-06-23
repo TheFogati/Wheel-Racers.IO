@@ -7,37 +7,66 @@ public class PlayerData
 {
     public int money;
 
-    public bool[] unlockedWheels;
-    public bool[] selectedWheel;
-    public bool[] unlockedTrails;
-    public bool[] selectedTrail;
+    public bool[] unlockedSimpleWheels;
+    public bool[] selectedSimpleWheel;
+    public bool[] unlockedEpicWheels;
+    public bool[] selectedEpicWheel;
+
+    public bool[] unlockedSimpleTrails;
+    public bool[] selectedSimpleTrail;
+    public bool[] unlockedEpicTrails;
+    public bool[] selectedEpicTrail;
 
     public PlayerData()
     {
         money = GameManager.manager.money;
 
-        unlockedWheels = new bool[GameManager.manager.wheels.Length];
-        for(int w = 0; w < GameManager.manager.wheels.Length; w++)
+        #region Wheels
+        unlockedSimpleWheels = new bool[GameManager.manager.simpleWheels.Length];
+        for(int w = 0; w < GameManager.manager.simpleWheels.Length; w++)
         {
-            unlockedWheels[w] = GameManager.manager.wheels[w].isUnlocked;
+            unlockedSimpleWheels[w] = GameManager.manager.simpleWheels[w].isUnlocked;
         }
-        selectedWheel = new bool[GameManager.manager.wheels.Length];
-        for (int w = 0; w < GameManager.manager.wheels.Length; w++)
+        selectedSimpleWheel = new bool[GameManager.manager.simpleWheels.Length];
+        for (int w = 0; w < GameManager.manager.simpleWheels.Length; w++)
         {
-            selectedWheel[w] = GameManager.manager.wheels[w].selected;
-        }
-
-
-        unlockedTrails = new bool[GameManager.manager.trails.Length];
-        for (int t = 0; t < GameManager.manager.trails.Length; t++)
-        {
-            unlockedTrails[t] = GameManager.manager.trails[t].isUnlocked;
-        }
-        selectedTrail = new bool[GameManager.manager.trails.Length];
-        for (int t = 0; t < GameManager.manager.trails.Length; t++)
-        {
-            selectedTrail[t] = GameManager.manager.trails[t].selected;
+            selectedSimpleWheel[w] = GameManager.manager.simpleWheels[w].selected;
         }
 
+        unlockedEpicWheels = new bool[GameManager.manager.epicWheels.Length];
+        for (int w = 0; w < GameManager.manager.epicWheels.Length; w++)
+        {
+            unlockedEpicWheels[w] = GameManager.manager.epicWheels[w].isUnlocked;
+        }
+        selectedEpicWheel = new bool[GameManager.manager.epicWheels.Length];
+        for (int w = 0; w < GameManager.manager.epicWheels.Length; w++)
+        {
+            selectedEpicWheel[w] = GameManager.manager.epicWheels[w].selected;
+        }
+        #endregion
+
+        #region Trails
+        unlockedSimpleTrails = new bool[GameManager.manager.simpleTrails.Length];
+        for (int t = 0; t < GameManager.manager.simpleTrails.Length; t++)
+        {
+            unlockedSimpleTrails[t] = GameManager.manager.simpleTrails[t].isUnlocked;
+        }
+        selectedSimpleTrail = new bool[GameManager.manager.simpleTrails.Length];
+        for (int t = 0; t < GameManager.manager.simpleTrails.Length; t++)
+        {
+            selectedSimpleTrail[t] = GameManager.manager.simpleTrails[t].selected;
+        }
+
+        unlockedEpicTrails = new bool[GameManager.manager.epicTrails.Length];
+        for (int t = 0; t < GameManager.manager.epicTrails.Length; t++)
+        {
+            unlockedEpicTrails[t] = GameManager.manager.epicTrails[t].isUnlocked;
+        }
+        selectedEpicTrail = new bool[GameManager.manager.epicTrails.Length];
+        for (int t = 0; t < GameManager.manager.epicTrails.Length; t++)
+        {
+            selectedEpicTrail[t] = GameManager.manager.epicTrails[t].selected;
+        }
+        #endregion
     }
 }

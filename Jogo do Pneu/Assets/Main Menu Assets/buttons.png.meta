@@ -350,9 +350,9 @@ TextureImporter:
       name: Buy
       rect:
         serializedVersion: 2
-        x: 188
-        y: 123
-        width: 393
+        x: 193
+        y: 127
+        width: 388
         height: 263
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -363,6 +363,27 @@ TextureImporter:
       bones: []
       spriteID: 52b14814b042809448ccb1dc59689831
       internalID: -1662503365
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Confirm Buy
+      rect:
+        serializedVersion: 2
+        x: 724
+        y: 128
+        width: 391
+        height: 258
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7142a9138d362474bab037f8ee0f3b1b
+      internalID: -1436684510
       vertices: []
       indices: 
       edges: []
@@ -380,11 +401,11 @@ TextureImporter:
     nameFileIdTable:
       buttons_34: -942327683
       buttons_41: 510280556
+      Confirm Buy: -1150850643
       Pause: -454026552
       buttons_10: 1553185622
       buttons_31: 1687106332
       Close Button: -700496457
-      buttons_0: -1150850643
       buttons_6: -1243651207
       Epic Button: -243130560
       buttons_12: -33307066
