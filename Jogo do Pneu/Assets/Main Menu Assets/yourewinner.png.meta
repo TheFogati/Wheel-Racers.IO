@@ -1,0 +1,337 @@
+fileFormatVersion: 2
+guid: 81bad3614abdc1a4989e5812e8180cc7
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Podium
+      rect:
+        serializedVersion: 2
+        x: 649
+        y: 1237
+        width: 1678
+        height: 689
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f6399c6e5c1a0914b8d461850453dc5c
+      internalID: 1195336993
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BronzeWheel
+      rect:
+        serializedVersion: 2
+        x: 1187
+        y: 757
+        width: 329
+        height: 337
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b48a50eb4e3ffb4f8daed4db0d4bba4
+      internalID: 1411420942
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SilverWheel
+      rect:
+        serializedVersion: 2
+        x: 1577
+        y: 758
+        width: 331
+        height: 339
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 123da39785ff15d429cfc5be0c0a837b
+      internalID: -1517620537
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoldenWheel
+      rect:
+        serializedVersion: 2
+        x: 1975
+        y: 763
+        width: 330
+        height: 339
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e3bbe1401c8de64f9bb98b30e77272c
+      internalID: -314629564
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FinishPanel
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 111
+        width: 817
+        height: 787
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 90, y: 90, z: 90, w: 90}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c9bb48c18d83c04886dc243ff0a1dad
+      internalID: -1630329917
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NoWheel
+      rect:
+        serializedVersion: 2
+        x: 1650
+        y: 510
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a424c63902accfa4086f59c24840a4e6
+      internalID: 537137462
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: b9d6e913fe091dc4385d9ff4bb93ac1b
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      yourewinner_21: -2120946747
+      yourewinner_32: 1703081030
+      yourewinner_34: -2120016594
+      yourewinner_43: -1125257935
+      yourewinner_35: 1600981743
+      yourewinner_48: 687875484
+      yourewinner_42: -2144457519
+      yourewinner_22: -764686038
+      yourewinner_61: -197610354
+      yourewinner_2: -277752583
+      NoWheel: 537137462
+      yourewinner_31: -499719689
+      yourewinner_46: -1996543322
+      yourewinner_51: -944705817
+      yourewinner_72: 1673707946
+      yourewinner_15: -679475035
+      yourewinner_17: -1659548562
+      yourewinner_5: -1068224440
+      yourewinner_37: -272955601
+      yourewinner_24: -1626277468
+      yourewinner_54: 1592749386
+      yourewinner_74: 591432038
+      yourewinner_23: -1891421580
+      yourewinner_38: -725869743
+      yourewinner_73: 1340093090
+      Podium: 1195336993
+      yourewinner_59: 631934752
+      BronzeWheel: 1411420942
+      yourewinner_9: -645129780
+      yourewinner_55: 1661853609
+      yourewinner_60: 671455057
+      yourewinner_50: -125512318
+      yourewinner_12: 716636120
+      yourewinner_40: -693801229
+      yourewinner_16: -2130158467
+      yourewinner_13: -1166281198
+      yourewinner_8: -1012910155
+      yourewinner_52: -1016560750
+      yourewinner_44: -1737717829
+      yourewinner_63: -661681761
+      yourewinner_49: -1573598297
+      yourewinner_14: 30556576
+      SilverWheel: -1517620537
+      yourewinner_66: 1328602118
+      yourewinner_57: -301046760
+      yourewinner_11: -356697375
+      yourewinner_36: 470680722
+      yourewinner_19: -278541389
+      yourewinner_53: 1763265961
+      FinishPanel: -1630329917
+      yourewinner_7: 88312694
+      yourewinner_70: 274706770
+      yourewinner_18: 523733485
+      yourewinner_71: 698707183
+      yourewinner_64: 195252706
+      yourewinner_58: 113348452
+      yourewinner_29: 1141001504
+      yourewinner_69: -213626163
+      GoldenWheel: -314629564
+      yourewinner_1: 513593562
+      yourewinner_47: 1252122472
+      yourewinner_3: 674154630
+      yourewinner_4: 791139411
+      yourewinner_33: -1901977963
+      yourewinner_65: -1705119574
+      yourewinner_10: 421593440
+      yourewinner_67: 714740194
+      yourewinner_75: -1452137369
+      yourewinner_62: -523273867
+      yourewinner_20: -2104131849
+      yourewinner_6: -1975475081
+      yourewinner_41: 957851559
+      yourewinner_68: -618322546
+      yourewinner_28: 311511141
+      yourewinner_25: 1149292536
+      yourewinner_56: -1348496656
+      yourewinner_39: 1377575686
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

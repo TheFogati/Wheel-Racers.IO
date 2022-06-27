@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PositionOrder : MonoBehaviour
 {
@@ -24,6 +25,7 @@ public class PositionOrder : MonoBehaviour
         {
             playerPosition = position.Length + 1;
             Points.endIt = true;
+            Points.position = playerPosition;
             GameManager.manager.runs++;
 
             switch(playerPosition)

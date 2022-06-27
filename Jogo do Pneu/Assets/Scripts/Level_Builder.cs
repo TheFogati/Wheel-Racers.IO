@@ -35,35 +35,34 @@ public class Level_Builder : MonoBehaviour
         }
     }
 
-
     void Stage(int times)
     {
         while(k < times)
         {
-            for (int i = 0; i < 2; i++)
-            {
-                currentTrack = Instantiate(middleRegularTrack, transform.position, Quaternion.Euler(Random.Range(-25f, 25f), 0, 0));
-                currentTrack.transform.position = lastTrack.transform.GetChild(1).gameObject.transform.position - currentTrack.transform.GetChild(0).gameObject.transform.position;
-                lastTrack = currentTrack;
-                lastTrack.transform.SetParent(transform);
-            }
-
-            currentTrack = Instantiate(middleSpecialTrack[Random.Range(0, middleSpecialTrack.Length)], transform.position, Quaternion.identity);
-            currentTrack.transform.position = lastTrack.transform.GetChild(1).gameObject.transform.position - currentTrack.transform.GetChild(0).gameObject.transform.position;
-            lastTrack = currentTrack;
-            currentTrack.transform.SetParent(transform);
-
-            for (int i = 0; i < 2; i++)
-            {
-                currentTrack = Instantiate(middleRegularTrack, transform.position, Quaternion.Euler(Random.Range(-25f, 25f), 0, 0));
-                currentTrack.transform.position = lastTrack.transform.GetChild(1).gameObject.transform.position - currentTrack.transform.GetChild(0).gameObject.transform.position;
-                lastTrack = currentTrack;
-                lastTrack.transform.SetParent(transform);
-            }
+            RegularTrack(2);
+            SpecialTracks();
+            RegularTrack(2);
 
             k++;
         }
+    }
 
-        
+    void RegularTrack(int quantity)
+    {
+        for (int i = 0; i < quantity; i++)
+        {
+            currentTrack = Instantiate(middleRegularTrack, transform.position, Quaternion.Euler(Random.Range(-10f, 30f), 0, 0));
+            currentTrack.transform.position = lastTrack.transform.GetChild(1).gameObject.transform.position - currentTrack.transform.GetChild(0).gameObject.transform.position;
+            lastTrack = currentTrack;
+            lastTrack.transform.SetParent(transform);
+        }
+    }
+
+    void SpecialTracks()
+    {
+        currentTrack = Instantiate(middleSpecialTrack[Random.Range(0, middleSpecialTrack.Length)], transform.position, Quaternion.identity);
+        currentTrack.transform.position = lastTrack.transform.GetChild(1).gameObject.transform.position - currentTrack.transform.GetChild(0).gameObject.transform.position;
+        lastTrack = currentTrack;
+        currentTrack.transform.SetParent(transform);
     }
 }

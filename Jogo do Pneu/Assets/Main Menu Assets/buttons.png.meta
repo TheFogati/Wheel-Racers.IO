@@ -376,7 +376,7 @@ TextureImporter:
         width: 391
         height: 258
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -384,6 +384,27 @@ TextureImporter:
       bones: []
       spriteID: 7142a9138d362474bab037f8ee0f3b1b
       internalID: -1436684510
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BackBTN
+      rect:
+        serializedVersion: 2
+        x: 1288
+        y: 129
+        width: 255
+        height: 260
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 31ae2c95641521346a56aa0a02a3c1f7
+      internalID: -1369162945
       vertices: []
       indices: 
       edges: []
@@ -436,6 +457,7 @@ TextureImporter:
       buttons_2: 532342705
       buttons_40: -623497358
       buttons_4: 5004701
+      BackBTN: -1369162945
       buttons_44: 2135277400
       buttons_11: -79858568
       buttons_53: -1247526255

@@ -6,7 +6,7 @@ public class Tire_Script : MonoBehaviour
 {
     //Private Variables
     Rigidbody rb;
-    bool grounded = false;
+    bool grounded;
     //Public Variables
     public bool player = false;
     public bool showcase = false;
@@ -23,6 +23,10 @@ public class Tire_Script : MonoBehaviour
     float flyTime;
     #endregion
 
+    private void Awake()
+    {
+        grounded = true;
+    }
 
     void Start()
     {

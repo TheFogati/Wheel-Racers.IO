@@ -98,7 +98,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isPlayer: 0
   indicator: {fileID: 5940106913650663139, guid: 8ae42ccf8fd73014bad18d281e859358, type: 3}
-  icon: {fileID: 21300000, guid: 51dfa214532ca704dbc84a24da31d96f, type: 3}
+  icon: {fileID: -65732232, guid: 03576b78e5f73fa41b2ef8af3857b46d, type: 3}
 --- !u!114 &-5337561810577243076
 MonoBehaviour:
   m_ObjectHideFlags: 0

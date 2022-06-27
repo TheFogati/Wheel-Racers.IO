@@ -7,8 +7,11 @@ public class Points : MonoBehaviour
 {
     Text points;
     public static int numbers;
+    public static int position;
 
     public GameObject endScreen;
+    public Image medal;
+    public Sprite[] medals;
     public static bool endIt;
 
     void Start()
@@ -26,6 +29,11 @@ public class Points : MonoBehaviour
             endScreen.SetActive(true);
         else
             endScreen.SetActive(false);
+
+        if(position <= 3)
+            medal.sprite = medals[position - 1];
+        else
+            medal.sprite = medals[3];
     }
 
     public static void AddPoints()
