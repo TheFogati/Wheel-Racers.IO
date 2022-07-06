@@ -15,8 +15,8 @@ public class EpicUnlocker : MonoBehaviour
     [Space]
     public GameObject unavailability;
 
-    bool wheelAvailable;
-    bool trailAvailable;
+    public static bool wheelAvailable;
+    public static bool trailAvailable;
 
     void Start()
     {

@@ -36,6 +36,9 @@ public class AddMoney : MonoBehaviour
         totalMoney = scoreMoney + positionMoney;
         GameManager.manager.money += totalMoney;
 
+        if (!EpicUnlocker.wheelAvailable && !EpicUnlocker.trailAvailable)
+            GameManager.manager.epicUnlockProgress = 0;
+            
         SaveSystem.SaveGame();
     }
 
