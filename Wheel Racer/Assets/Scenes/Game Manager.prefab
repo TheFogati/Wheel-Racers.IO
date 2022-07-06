@@ -88,6 +88,14 @@ MonoBehaviour:
     model: {fileID: 5546243866897337857, guid: 9ccd3dea0fc3e2346b58d1b9c46683de, type: 3}
     isUnlocked: 0
     selected: 0
+  - name: Tractor
+    model: {fileID: 5546243866897337857, guid: 296ce815e14a93e4895ea67734f85109, type: 3}
+    isUnlocked: 0
+    selected: 0
+  - name: Cyberpunk 2088
+    model: {fileID: 5546243866897337857, guid: 193b677bf1a4a0c4cbfa635d89370ebe, type: 3}
+    isUnlocked: 0
+    selected: 0
   simpleTrails:
   - name: Red Hot
     model: {fileID: 5322293978110513462, guid: c33b44f45f5989544a6b59603a561b6f, type: 3}
