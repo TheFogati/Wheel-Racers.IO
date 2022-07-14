@@ -37,8 +37,10 @@ public class AdsManager : MonoBehaviour, IUnityAdsListener
 
     public void PlayInterstitialAd()
     {
-        if(Advertisement.IsReady("Interstitial_Android"))
+        if (Advertisement.IsReady("Interstitial_Android"))
             Advertisement.Show("Interstitial_Android");
+        else
+            PlayInterstitialAd();
     }
 
     public void PlayRewardedAd(Action onSuccess)

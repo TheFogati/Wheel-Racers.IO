@@ -2,61 +2,56 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class EpicUnlocker : MonoBehaviour
 {
-    public GameObject progression;
+    public Animator anim;
+    [Space]
+    public TextMeshProUGUI newThingsText;
     public Text progressionText;
     public Slider progressionBar;
-    public Text progressionPercent;
-    [Space]
-    public GameObject unlockBtn;
-    public Text unlockText;
-    [Space]
-    public GameObject unavailability;
+    public Button progressButton;
 
-    public static bool wheelAvailable;
-    public static bool trailAvailable;
+    public bool wheelAvailable;
+    public bool trailAvailable;
 
-    void Start()
+    private void Awake()
     {
-        wheelAvailable = false;
-        trailAvailable = false;
+        CheckAvailableEpics();
     }
 
     void Update()
     {
-        CheckAvailableEpics();
+        
 
-        if(wheelAvailable || trailAvailable)
+        if (wheelAvailable || trailAvailable)
         {
-            if (GameManager.manager.epicUnlockProgress < 100)
+            if(GameManager.manager.epicUnlockProgress < 100)
             {
-                progression.SetActive(true);
-                unlockBtn.SetActive(false);
-                unavailability.SetActive(false);
-                TrackProgress();
+                anim.SetInteger("Unlocks", 0);
+                progressionBar.gameObject.SetActive(true);
+                progressButton.gameObject.SetActive(false);
             }
             else
             {
-                progression.SetActive(false);
-                unlockBtn.SetActive(true);
-                unavailability.SetActive(false);
-
-                if (GameManager.manager.unlockWheel)
-                    unlockText.text = "Unlock new Epic Wheel";
-                else
-                    unlockText.text = "Unlock new Epic Trail";
+                anim.SetInteger("Unlocks", 1);
+                progressionBar.gameObject.SetActive(false);
+                progressButton.gameObject.SetActive(true);
             }
         }
         else
         {
-            progression.SetActive(false);
-            unlockBtn.SetActive(false);
-            unavailability.SetActive(true);
+            anim.SetInteger("Unlocks", 2);
         }
 
-        progressionPercent.text = progressionBar.value.ToString() + "%";
+        if(GameManager.manager.unlockWheel)
+            newThingsText.text = "An Epic Wheel";
+        else
+            newThingsText.text = "An Epic Trail";
+
+        progressionBar.value = GameManager.manager.epicUnlockProgress;
+        progressionText.text = GameManager.manager.epicUnlockProgress.ToString() + "%";
     }
 
     void CheckAvailableEpics()
@@ -72,6 +67,7 @@ public class EpicUnlocker : MonoBehaviour
                 wheelAvailable = false;
                 
         }
+
         foreach(EpicTrails t in GameManager.manager.epicTrails)
         {
             if (!t.isUnlocked)
@@ -84,29 +80,4 @@ public class EpicUnlocker : MonoBehaviour
                 
         }
     }
-
-    void TrackProgress()
-    {
-        if (GameManager.manager.unlockWheel)
-        {
-            if (wheelAvailable)
-            {
-                progressionBar.value = GameManager.manager.epicUnlockProgress;
-                progressionText.text = "Progress to unlock new Epic Wheel";
-            }
-            else
-                GameManager.manager.unlockWheel = false;
-        }
-        else
-        {
-            if (trailAvailable)
-            {
-                progressionBar.value = GameManager.manager.epicUnlockProgress;
-                progressionText.text = "Progress to unlock new Epic Trail";
-            }
-            else
-                GameManager.manager.unlockWheel = true;
-        }
-    }
-
 }

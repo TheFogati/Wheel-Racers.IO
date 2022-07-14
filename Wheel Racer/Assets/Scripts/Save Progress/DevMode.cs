@@ -9,6 +9,9 @@ public class DevMode : MonoBehaviour
     {
         GameManager.manager.money = 0;
 
+        GameManager.manager.unlockWheel = true;
+        GameManager.manager.epicUnlockProgress = 0;
+
         for (int w = 0; w < GameManager.manager.simpleWheels.Length; w++)
         {
             GameManager.manager.simpleWheels[w].isUnlocked = false;
