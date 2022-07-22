@@ -2,9 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System;
 
 public class UnlockEpic : MonoBehaviour
 {
+    Action<bool> giveReward;
+
     public GameObject unlockedBox;
     [Space]
     public Image unlockedImage;
@@ -16,28 +19,33 @@ public class UnlockEpic : MonoBehaviour
 
     public void Unlock()
     {
-        AdsManager.manager.PlayRewardedAd(UnlockIt);
+        SayKit.showRewarded(giveReward);
+
+        giveReward = UnlockIt;
     }
 
-    void UnlockIt()
+    void UnlockIt(bool give)
     {
-        if (GameManager.manager.unlockWheel)
-            CheckWheel();
-        else
-            CheckTrail();
+        if(give)
+        {
+            if (GameManager.manager.unlockWheel)
+                CheckWheel();
+            else
+                CheckTrail();
 
-        GameManager.manager.unlockWheel = !GameManager.manager.unlockWheel;
-        GameManager.manager.epicUnlockProgress = 0;
-        unlockedBox.SetActive(true);
-        unlockedImage.sprite = unlockedSprite;
+            GameManager.manager.unlockWheel = !GameManager.manager.unlockWheel;
+            GameManager.manager.epicUnlockProgress = 0;
+            unlockedBox.SetActive(true);
+            unlockedImage.sprite = unlockedSprite;
 
-        SaveSystem.SaveGame();
+            SaveSystem.SaveGame();
+        }
     }
 
 
     void CheckWheel()
     {
-        int rnd = Random.Range(0, GameManager.manager.epicWheels.Length);
+        int rnd = UnityEngine.Random.Range(0, GameManager.manager.epicWheels.Length);
 
         if (GameManager.manager.epicWheels[rnd].isUnlocked)
             CheckWheel();
@@ -52,7 +60,7 @@ public class UnlockEpic : MonoBehaviour
 
     void CheckTrail()
     {
-        int rnd = Random.Range(0, GameManager.manager.epicTrails.Length);
+        int rnd = UnityEngine.Random.Range(0, GameManager.manager.epicTrails.Length);
 
         if (GameManager.manager.epicTrails[rnd].isUnlocked)
             CheckTrail();

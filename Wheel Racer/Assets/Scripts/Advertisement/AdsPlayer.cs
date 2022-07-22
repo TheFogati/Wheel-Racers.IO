@@ -5,12 +5,6 @@ using UnityEngine.UI;
 
 public class AdsPlayer : MonoBehaviour
 {
-
-    void Start()
-    {
-
-    }
-
     void Update()
     {
         if(GameManager.manager.runs >= 2)
@@ -20,6 +14,6 @@ public class AdsPlayer : MonoBehaviour
     void InterstitialAdAfterRuns()
     {
         GameManager.manager.runs = 0;
-        AdsManager.manager.PlayInterstitialAd();
+        SayKit.showInterstitial();
     }
 }

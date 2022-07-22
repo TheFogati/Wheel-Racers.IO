@@ -2,21 +2,28 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System;
 
 public class DoubleReward : MonoBehaviour
 {
+    Action<bool> giveReward;
+
+    public Button btn;
+
     public void DoubleTheReward()
     {
-        AdsManager.manager.PlayRewardedAd(DoubleRewardSuccess);
+        SayKit.showRewarded(giveReward);
+
+        giveReward = DoubleRewardSuccess;
     }
-    void DoubleRewardSuccess()
+    void DoubleRewardSuccess(bool give)
     {
-        GameManager.manager.money += AddMoney.totalMoney;
-        AddMoney.totalMoney *= 2;
-        SaveSystem.SaveGame();
-    }
-    public void DoubleRewardOnce(Button btn)
-    {
-        btn.interactable = false;
+        if(give)
+        {
+            GameManager.manager.money += AddMoney.totalMoney;
+            AddMoney.totalMoney *= 2;
+            btn.interactable = false;
+            SaveSystem.SaveGame();
+        }
     }
 }

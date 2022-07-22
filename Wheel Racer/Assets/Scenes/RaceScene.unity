@@ -3015,18 +3015,6 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1607674153}
         m_TargetAssemblyTypeName: DoubleReward, Assembly-CSharp
-        m_MethodName: DoubleTheReward
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1607674153}
-        m_TargetAssemblyTypeName: DoubleReward, Assembly-CSharp
         m_MethodName: DoubleRewardOnce
         m_Mode: 2
         m_Arguments:
@@ -3682,7 +3670,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1607674156}
-  - component: {fileID: 1607674155}
   - component: {fileID: 1607674153}
   - component: {fileID: 1607674154}
   - component: {fileID: 1607674152}
@@ -3731,6 +3718,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 028a8d52bb75d0241bbf7cf8c9797866, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  btn: {fileID: 1346829391}
 --- !u!114 &1607674154
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3743,19 +3731,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6a7cb7681735834a8b15c9bac23ce2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1607674155
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1607674151}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 72abc7a9d9f145947b17ba0d2c5e9787, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hide: 0
 --- !u!4 &1607674156
 Transform:
   m_ObjectHideFlags: 0

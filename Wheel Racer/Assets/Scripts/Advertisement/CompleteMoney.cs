@@ -1,11 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class CompleteMoney : MonoBehaviour
 {
     public GameObject notEnough;
     public BuyingScript buy;
+
+    Action<bool> giveReward;
 
     public void ClosePopup()
     {
@@ -14,13 +17,19 @@ public class CompleteMoney : MonoBehaviour
 
     public void Complete()
     {
-        AdsManager.manager.PlayRewardedAd(CompleteSuccess);
+        SayKit.showRewarded(giveReward);
+
+        giveReward = CompleteSuccess;
     }
 
-    void CompleteSuccess()
+    void CompleteSuccess(bool give)
     {
-        GameManager.manager.money = 300;
-        buy.Buy();
+        if(give)
+        {
+            GameManager.manager.money = 300;
+            buy.Buy();
+        }
+
         notEnough.SetActive(false);
     }
 }
