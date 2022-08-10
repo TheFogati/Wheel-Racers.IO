@@ -6,15 +6,11 @@ using System;
 
 public class DoubleReward : MonoBehaviour
 {
-    Action<bool> giveReward;
-
     public Button btn;
 
     public void DoubleTheReward()
     {
-        SayKit.showRewarded(giveReward);
-
-        giveReward = DoubleRewardSuccess;
+        SayKit.showRewarded(DoubleRewardSuccess);
     }
     void DoubleRewardSuccess(bool give)
     {
@@ -24,6 +20,8 @@ public class DoubleReward : MonoBehaviour
             AddMoney.totalMoney *= 2;
             btn.interactable = false;
             SaveSystem.SaveGame();
+
+            Debug.Log("Reward: Doubled Coins");
         }
     }
 }

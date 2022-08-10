@@ -6,8 +6,6 @@ using System;
 
 public class UnlockEpic : MonoBehaviour
 {
-    Action<bool> giveReward;
-
     public GameObject unlockedBox;
     [Space]
     public Image unlockedImage;
@@ -19,9 +17,7 @@ public class UnlockEpic : MonoBehaviour
 
     public void Unlock()
     {
-        SayKit.showRewarded(giveReward);
-
-        giveReward = UnlockIt;
+        SayKit.showRewarded(UnlockIt);
     }
 
     void UnlockIt(bool give)
@@ -39,6 +35,8 @@ public class UnlockEpic : MonoBehaviour
             unlockedImage.sprite = unlockedSprite;
 
             SaveSystem.SaveGame();
+
+            Debug.Log("Reward: New Epic");
         }
     }
 

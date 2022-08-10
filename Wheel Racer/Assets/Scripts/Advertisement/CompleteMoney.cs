@@ -8,7 +8,10 @@ public class CompleteMoney : MonoBehaviour
     public GameObject notEnough;
     public BuyingScript buy;
 
-    Action<bool> giveReward;
+    private void Awake()
+    {
+        SayKit.isRewardedAvailable();
+    }
 
     public void ClosePopup()
     {
@@ -17,9 +20,7 @@ public class CompleteMoney : MonoBehaviour
 
     public void Complete()
     {
-        SayKit.showRewarded(giveReward);
-
-        giveReward = CompleteSuccess;
+        SayKit.showRewarded(CompleteSuccess);
     }
 
     void CompleteSuccess(bool give)
@@ -28,6 +29,8 @@ public class CompleteMoney : MonoBehaviour
         {
             GameManager.manager.money = 300;
             buy.Buy();
+
+            Debug.Log("Reward: Missing Money");
         }
 
         notEnough.SetActive(false);

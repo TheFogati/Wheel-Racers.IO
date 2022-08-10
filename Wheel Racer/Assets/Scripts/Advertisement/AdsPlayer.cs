@@ -15,5 +15,7 @@ public class AdsPlayer : MonoBehaviour
     {
         GameManager.manager.runs = 0;
         SayKit.showInterstitial();
+
+        Debug.Log("Sponsor Time");
     }
 }
