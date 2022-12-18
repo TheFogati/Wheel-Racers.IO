@@ -123,7 +123,7 @@ AudioSource:
   m_GameObject: {fileID: 5546243866897337857}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -8182648229625202070, guid: 8eb657d6feac2c04482746be34b85722, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 0.25
@@ -215,6 +215,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 2
     m_TransformParent: {fileID: 2375126739552991364}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 97793a30c1eb2a54e8a052a83f05d2b9, type: 3}
@@ -282,6 +283,7 @@ PrefabInstance:
       value: prmCyberp
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 97793a30c1eb2a54e8a052a83f05d2b9, type: 3}
 --- !u!4 &4923592950126798876 stripped
 Transform:

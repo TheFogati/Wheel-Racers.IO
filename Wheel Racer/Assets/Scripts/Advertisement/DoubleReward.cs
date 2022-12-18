@@ -6,22 +6,22 @@ using System;
 
 public class DoubleReward : MonoBehaviour
 {
+    public AdsManager ads;
+    [Space]
     public Button btn;
 
     public void DoubleTheReward()
     {
-        SayKit.showRewarded(DoubleRewardSuccess);
+        if (ads.rewardedAdLoaded)
+            ads.ShowRewardedAd(DoubleRewardSuccess);
     }
-    void DoubleRewardSuccess(bool give)
+    void DoubleRewardSuccess()
     {
-        if(give)
-        {
-            GameManager.manager.money += AddMoney.totalMoney;
-            AddMoney.totalMoney *= 2;
-            btn.interactable = false;
-            SaveSystem.SaveGame();
+        GameManager.manager.money += AddMoney.totalMoney;
+        AddMoney.totalMoney *= 2;
+        btn.interactable = false;
+        SaveSystem.SaveGame();
 
-            Debug.Log("Reward: Doubled Coins");
-        }
+        Debug.Log("Reward: Doubled Coins");
     }
 }

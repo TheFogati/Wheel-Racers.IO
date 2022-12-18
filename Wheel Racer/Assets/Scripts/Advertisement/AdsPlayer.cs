@@ -5,17 +5,22 @@ using UnityEngine.UI;
 
 public class AdsPlayer : MonoBehaviour
 {
+    public AdsManager ads;
+    bool adAvailability;
+
+
     void Update()
     {
-        if(GameManager.manager.runs >= 2)
-            InterstitialAdAfterRuns();
-    }
+        if (!ads.rewardedAdLoaded)
+            ads.LoadRewardedAd();
+        if (!ads.interstitialAdLoaded)
+            ads.LoadInterstitialAd();
 
-    void InterstitialAdAfterRuns()
-    {
-        GameManager.manager.runs = 0;
-        SayKit.showInterstitial();
-
-        Debug.Log("Sponsor Time");
+        if (GameManager.manager.runs >= 2 && ads.interstitialAdLoaded)
+        {
+            ads.ShowInterstitialAd();
+            GameManager.manager.runs = 0;
+            Debug.Log("Sponsor Time");
+        }
     }
 }

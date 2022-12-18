@@ -6,6 +6,8 @@ using System;
 
 public class UnlockEpic : MonoBehaviour
 {
+    public AdsManager ads;
+    [Space]
     public GameObject unlockedBox;
     [Space]
     public Image unlockedImage;
@@ -17,27 +19,25 @@ public class UnlockEpic : MonoBehaviour
 
     public void Unlock()
     {
-        SayKit.showRewarded(UnlockIt);
+        if (ads.rewardedAdLoaded)
+            ads.ShowRewardedAd(UnlockIt);
     }
 
-    void UnlockIt(bool give)
+    void UnlockIt()
     {
-        if(give)
-        {
-            if (GameManager.manager.unlockWheel)
-                CheckWheel();
-            else
-                CheckTrail();
+        if (GameManager.manager.unlockWheel)
+            CheckWheel();
+        else
+            CheckTrail();
 
-            GameManager.manager.unlockWheel = !GameManager.manager.unlockWheel;
-            GameManager.manager.epicUnlockProgress = 0;
-            unlockedBox.SetActive(true);
-            unlockedImage.sprite = unlockedSprite;
+        GameManager.manager.unlockWheel = !GameManager.manager.unlockWheel;
+        GameManager.manager.epicUnlockProgress = 0;
+        unlockedBox.SetActive(true);
+        unlockedImage.sprite = unlockedSprite;
 
-            SaveSystem.SaveGame();
+        SaveSystem.SaveGame();
 
-            Debug.Log("Reward: New Epic");
-        }
+        Debug.Log("Reward: New Epic");
     }
 
 

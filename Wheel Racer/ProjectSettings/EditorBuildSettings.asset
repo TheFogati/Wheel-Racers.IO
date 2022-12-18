@@ -9,48 +9,17 @@ EditorBuildSettings:
     path: Assets/Scenes/Main Menu.unity
     guid: de44e21f14f6a0f40b50d23c7cba844e
   - enabled: 1
+    path: Assets/Scenes/RaceScene.unity
+    guid: a7bcee2c4e9d2fe46a20c3c903ac8fe1
+  - enabled: 1
     path: Assets/Scenes/LevelLoad.unity
     guid: 9f19ffe1e73a43c4c84393a91df66fea
-  - enabled: 1
-    path: Assets/Scenes/RaceScene.unity
-    guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
     path: Assets/Scenes/CustomizeWheel.unity
     guid: 67fe86b1e28943646a38925edbec8322
   - enabled: 1
     path: Assets/Scenes/CustomizeTrail.unity
     guid: c9074eab9cd7d8c429893ded9f2c8d8f
-  - enabled: 1
-    path: Assets/FacebookSDK/Examples/AccessTokenMenu.unity
-    guid: 67cb5b2387b8e4ec9b2fa69ad9510e9b
-  - enabled: 1
-    path: Assets/FacebookSDK/Examples/AppEvents.unity
-    guid: 68ab940fa15e34433bff18301686b080
-  - enabled: 1
-    path: Assets/FacebookSDK/Examples/AppLinks.unity
-    guid: 4ac12dfde6570493291366d0ab3eb20d
-  - enabled: 1
-    path: Assets/FacebookSDK/Examples/AppRequests.unity
-    guid: c2250c9c5cf00425384401321f8dffb4
-  - enabled: 1
-    path: Assets/FacebookSDK/Examples/DialogShare.unity
-    guid: 190c345841ecc464e9a122f04369757e
-  - enabled: 1
-    path: Assets/FacebookSDK/Examples/GraphRequest.unity
-    guid: 444ae7ddf432b457a97bfe42021075e3
-  - enabled: 1
-    path: Assets/FacebookSDK/Examples/LogView.unity
-    guid: c07ff0bf6bea74c2eb681ac0cae44265
-  - enabled: 1
-    path: Assets/FacebookSDK/Examples/MainMenu.unity
-    guid: 7c38a8c9adc9d5c4b869612e4033ead8
-  - enabled: 1
-    path: Assets/FacebookSDK/Examples/Pay.unity
-    guid: 3ee189cdb21ea4bdb9d7022a0780c44c
-  - enabled: 1
-    path: Assets/FacebookSDK/Examples/TournamentsMenu.unity
-    guid: 6f8d688887086476cb9533793ffa1756
-  - enabled: 1
-    path: Assets/FacebookSDK/Examples/UploadToMediaLibrary.unity
-    guid: 6953b5ebad5134d32b0433745ec4a661
-  m_configObjects: {}
+  m_configObjects:
+    UnityEditor.XR.ARCore.ARCoreSettings: {fileID: 11400000, guid: 02a4df7e85ab5934fad4d24e17a8a89f, type: 2}
+    com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 42850671222216d4bae7b42847f85092, type: 2}

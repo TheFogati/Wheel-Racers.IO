@@ -5,33 +5,32 @@ using System;
 
 public class CompleteMoney : MonoBehaviour
 {
+    public AdsManager ads;
+    [Space]
     public GameObject notEnough;
     public BuyingScript buy;
-
-    private void Awake()
-    {
-        SayKit.isRewardedAvailable();
-    }
 
     public void ClosePopup()
     {
         notEnough.SetActive(false);
     }
 
+    public void CheckAvailability()
+    {
+        ads.LoadRewardedAd();
+    }
     public void Complete()
     {
-        SayKit.showRewarded(CompleteSuccess);
+        if (ads.rewardedAdLoaded)
+            ads.ShowRewardedAd(CompleteSuccess);
     }
 
-    void CompleteSuccess(bool give)
+    void CompleteSuccess()
     {
-        if(give)
-        {
-            GameManager.manager.money = 300;
-            buy.Buy();
+        GameManager.manager.money = 300;
+        buy.Buy();
 
-            Debug.Log("Reward: Missing Money");
-        }
+        Debug.Log("Reward: Missing Money");
 
         notEnough.SetActive(false);
     }

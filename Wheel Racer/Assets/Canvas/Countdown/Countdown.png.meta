@@ -3,7 +3,7 @@ guid: ea8e60b63244ec0409a50f0049f571e2
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
-  serializedVersion: 11
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -20,6 +20,7 @@ TextureImporter:
     externalNormalMap: 0
     heightScale: 0.25
     normalMapFilter: 0
+    flipGreenChannel: 0
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
@@ -63,6 +64,8 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -119,10 +122,10 @@ TextureImporter:
       name: 3
       rect:
         serializedVersion: 2
-        x: 181
-        y: 468
-        width: 83
-        height: 138
+        x: 94
+        y: 207
+        width: 76
+        height: 116
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -130,7 +133,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2918ce47ba48de1438a630fd0f1a2b64
+      spriteID: 8e56f87361c87ec439ba2a9aa75b007c
       internalID: -321696122
       vertices: []
       indices: 
@@ -140,10 +143,10 @@ TextureImporter:
       name: 2
       rect:
         serializedVersion: 2
-        x: 336
-        y: 474
-        width: 84
-        height: 132
+        x: 306
+        y: 207
+        width: 77
+        height: 116
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -151,7 +154,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 068f9c1461438d540992876240575c8c
+      spriteID: 82a56cf16041b5c46b89b66793b55580
       internalID: 413280274
       vertices: []
       indices: 
@@ -161,10 +164,10 @@ TextureImporter:
       name: 1
       rect:
         serializedVersion: 2
-        x: 496
-        y: 474
-        width: 56
-        height: 134
+        x: 519
+        y: 207
+        width: 76
+        height: 116
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -172,7 +175,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b2eb58e98f2dbad4d8127b8de9c3eb34
+      spriteID: 3526d5951b024384c9993992c0e95287
       internalID: 2108268464
       vertices: []
       indices: 
@@ -182,10 +185,10 @@ TextureImporter:
       name: GO
       rect:
         serializedVersion: 2
-        x: 620
-        y: 468
-        width: 244
-        height: 144
+        x: 732
+        y: 207
+        width: 186
+        height: 116
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -193,8 +196,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 04765f9b3b652ea48ab2b4cecd62e2ff
-      internalID: -1961429713
+      spriteID: ce345555462f3cc4fb09dea816a4a2ce
+      internalID: -1659872295
       vertices: []
       indices: 
       edges: []
@@ -211,13 +214,14 @@ TextureImporter:
     secondaryTextures: []
     nameFileIdTable:
       3: -321696122
-      GO: -1961429713
+      Countdown_5: 1415532398
+      Countdown_2: -1486714731
+      GO: -1659872295
       2: 413280274
-      1: 2108268464
-      Countdown_4: -1659872295
+      1: -913860181
+      Countdown_6: -924032097
   spritePackingTag: 
   pSDRemoveMatte: 0
-  pSDShowRemoveMatteOption: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 
